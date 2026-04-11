@@ -1,0 +1,13 @@
+{
+  "name": "focus-cli",
+  "version": "1.0.0",
+  "description": "Hyperfocus Assistant for CLI",
+  "main": "focus.js",
+  "bin": {
+    "focus": "./focus.js"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "type": "commonjs"
+}
