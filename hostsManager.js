@@ -2,7 +2,6 @@ const fs = require('fs');
 const os = require('os');
 const path = require('path');
 
-// C:\Windows\System32\drivers\etc\hosts on Windows
 const HOSTS_FILE = os.platform() === 'win32' 
   ? 'C:\\Windows\\System32\\drivers\\etc\\hosts' 
   : '/etc/hosts';
@@ -10,7 +9,6 @@ const HOSTS_FILE = os.platform() === 'win32'
 const START_MARKER = '# --- FOCUS CLI BLOCK START ---';
 const END_MARKER = '# --- FOCUS CLI BLOCK END ---';
 
-// Default distraction sites (can be customized)
 const defaultBlocklist = [
   'facebook.com', 'www.facebook.com',
   'twitter.com', 'x.com', 'www.twitter.com',
@@ -62,7 +60,6 @@ function enableBlocking() {
   try {
     let hostsContent = fs.readFileSync(HOSTS_FILE, 'utf8');
     
-    // If it's already blocked, clean it first
     if (hostsContent.includes(START_MARKER)) {
       disableBlocking();
       hostsContent = fs.readFileSync(HOSTS_FILE, 'utf8');
@@ -94,7 +91,7 @@ function disableBlocking() {
   try {
     let hostsContent = fs.readFileSync(HOSTS_FILE, 'utf8');
     
-    if (!hostsContent.includes(START_MARKER)) return; // Nothing to remove
+    if (!hostsContent.includes(START_MARKER)) return;
     
     const regex = new RegExp(`[\\r\\n]*${START_MARKER}[\\s\\S]*?${END_MARKER}[\\r\\n]*`, 'g');
     hostsContent = hostsContent.replace(regex, os.EOL);
