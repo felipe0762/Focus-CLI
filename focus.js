@@ -7,6 +7,18 @@ const { generateReport } = require('./tracker');
 const args = process.argv.slice(2);
 const command = args[0];
 
+// --- NOVA FUNÇÃO: Consumir a API Pública ---
+async function obterFraseMotivacional() {
+    try {
+        const resposta = await fetch('https://api.adviceslip.com/advice');
+        const dados = await resposta.json();
+        console.log(`\n💡 Dica para o seu foco: "${dados.slip.advice}"\n`);
+    } catch (erro) {
+        console.log(`\n💡 Dica para o seu foco: "Desligue o telemóvel e mantenha-se focado!"\n`);
+    }
+}
+// ------------------------------------------
+
 function showHelp() {
   console.log(`
 \x1b[36m\x1b[1mFocus CLI - Hyperfocus Assistant\x1b[0m
@@ -33,8 +45,14 @@ switch (command) {
       console.error('\x1b[31m[!] Please specify valid minutes.\x1b[0m Example: node focus.js start 25');
       process.exit(1);
     }
-    enableBlocking();
-    startTimer(minutes);
+    
+    // --- ALTERAÇÃO: Envolvemos o arranque numa função assíncrona para esperar pela API ---
+    (async () => {
+        await obterFraseMotivacional(); // 1º Vai à internet buscar a frase e mostra no ecrã
+        enableBlocking();               // 2º Bloqueia os sites
+        startTimer(minutes);            // 3º Inicia o relógio
+    })();
+    // ------------------------------------------------------------------------------------
     break;
 
   case 'stop':
