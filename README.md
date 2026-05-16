@@ -1,7 +1,7 @@
 # Focus CLI 
 
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen?logo=github-actions)](https://github.com/felipe0762/focus-cli)
-[![NPM Version](https://img.shields.io/npm/v/focus-cli-felipe0762.svg)](https://www.npmjs.com/package/felipe-focus-timer)
+[![NPM Version](https://img.shields.io/npm/v/felipe-focus-timer.svg)](https://www.npmjs.com/package/felipe-focus-timer)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 **Versão**: 1.1.0  
