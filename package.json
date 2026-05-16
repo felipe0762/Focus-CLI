@@ -1,13 +1,17 @@
 {
-  "name": "focus-cli",
-  "version": "1.0.0",
-  "description": "Hyperfocus Assistant for CLI",
+  "name": "felipe-focus-timer",
+  "version": "1.1.0",
+  "description": "Uma CLI para bloquear distrações e manter o foco",
   "main": "focus.js",
   "bin": {
-    "focus": "./focus.js"
+    "focus-cli": "./focus.js"
   },
   "scripts": {
-    "test": "node test.js"
+    "test": "jest"
   },
-  "type": "commonjs"
+  "author": "Felipe",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^30.4.2"
+  }
 }

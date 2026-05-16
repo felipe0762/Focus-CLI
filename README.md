@@ -1,12 +1,13 @@
 # Focus CLI 
 
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen?logo=github-actions)](https://github.com/felipe0762/focus-cli)
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)]()
+[![NPM Version](https://img.shields.io/npm/v/felipe-focus-timer.svg)](https://www.npmjs.com/package/felipe-focus-timer)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**Versão**: 1.0.0  
+**Versão**: 1.1.0  
 **Autor**: Felipe (@felipe0762)  
-**Repositório Público**: [https://github.com/felipe0762/focus-cli](https://github.com/felipe0762/focus-cli)
+**Repositório Público**: [https://github.com/felipe0762/focus-cli](https://github.com/felipe0762/focus-cli)  
+**Link de Deploy (NPM)**: [https://www.npmjs.com/package/felipe-focus-timer](https://www.npmjs.com/package/felipe-focus-timer)
 
 Focus CLI é um assistente de hiperfoco em linha de comando (CLI) desenvolvido em Node.js. Ele funciona como um cronômetro estilo Pomodoro que, durante o seu tempo de foco, bloqueia ativamente sites que causam distração (como redes sociais) e gera um relatório semanal de horas líquidas de concentração.
 
@@ -25,6 +26,16 @@ Ideal para estudantes e profissionais, especialmente para pessoas com TDAH, que 
 ---
 
 ## 🛠️ Como Usar
+## 🌍 Como Instalar (Deploy)
+
+Como a aplicação está publicada no NPM, você não precisa mais baixar os arquivos manualmente. Você pode instalar o Focus CLI globalmente no seu computador rodando apenas um comando:
+
+```bash
+npm install -g felipe-focus-timer
+```
+Se você instalou globalmente via NPM, pode usar o programa de qualquer pasta do seu computador apenas digitando focus-cli.
+
+(Se estiver rodando o código localmente baixado do GitHub, substitua focus-cli por node focus.js e lembre-se de navegar até a pasta do projeto primeiro).
 
 > **⚠️ IMPORTANTE**: Como o sistema modifica a nível de rede o arquivo `hosts` do Windows (`C:\Windows\System32\drivers\etc\hosts`), você deve rodar o terminal (Command Prompt ou PowerShell) **como Administrador**.
 

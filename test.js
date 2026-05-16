@@ -11,6 +11,13 @@ let backupBlocklist = null;
 if (fs.existsSync(blocklistFile)) {
   backupBlocklist = fs.readFileSync(blocklistFile, 'utf8');
 }
+test('Deve conectar com a API de conselhos e retornar um texto', async () => {
+    const resposta = await fetch('https://api.adviceslip.com/advice');
+    const dados = await resposta.json();
+
+    expect(resposta.status).toBe(200); // 200 significa "OK, conectado!"
+    expect(dados.slip.advice).toBeDefined(); // Garante que a frase não veio vazia
+});
 
 try {
   console.log("\x1b[1m[1] CENÁRIO: Caminho Feliz (Happy Path)\x1b[0m");
