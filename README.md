@@ -7,7 +7,7 @@
 **Versão**: 1.1.0  
 **Autor**: Felipe (@felipe0762)  
 **Repositório Público**: [https://github.com/felipe0762/focus-cli](https://github.com/felipe0762/focus-cli)  
-**Link de Deploy (NPM)**: [https://www.npmjs.com/package/focus-cli-felipe0762](https://www.npmjs.com/package/focus-cli-felipe0762)
+**Link de Deploy (NPM)**: [https://www.npmjs.com/package/focus-cli-felipe0762](https://www.npmjs.com/package/felipe-focus-timer)
 
 Focus CLI é um assistente de hiperfoco em linha de comando (CLI) desenvolvido em Node.js. Ele funciona como um cronômetro estilo Pomodoro que, durante o seu tempo de foco, bloqueia ativamente sites que causam distração (como redes sociais) e gera um relatório semanal de horas líquidas de concentração.
 
@@ -31,7 +31,7 @@ Ideal para estudantes e profissionais, especialmente para pessoas com TDAH, que 
 Como a aplicação está publicada no NPM, você não precisa mais baixar os arquivos manualmente. Você pode instalar o Focus CLI globalmente no seu computador rodando apenas um comando:
 
 ```bash
-npm install -g focus-cli-felipe0762
+npm install -g felipe-focus-timer
 ```
 Se você instalou globalmente via NPM, pode usar o programa de qualquer pasta do seu computador apenas digitando focus-cli.
 
