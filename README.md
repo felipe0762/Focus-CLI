@@ -20,53 +20,69 @@ Ideal para estudantes e profissionais, especialmente para pessoas com TDAH, que 
 ## 🚀 Recursos Principais
 - ⏱️ **Cronômetro Pomodoro**: Acompanhe o tempo de foco diretamente do seu terminal.
 - 🚫 **Bloqueio Ativo**: Altera seu arquivo `hosts` do Windows para impedir momentaneamente o acesso a sites como Facebook, Twitter, Instagram e YouTube durante a sua sessão.
-- 💡 **Integração com API Externa**: Ao iniciar o timer, o programa consome uma API pública (Advice Slip) para exibir uma frase motivacional e ajudar no seu foco.
 - 📊 **Relatórios**: Registra e calcula automaticamente quantas "horas líquidas" você conseguiu se concentrar na semana.
+- ⚡ **Zero Dependências**: O código foi construído 100% com recursos nativos do Node.js puro, resultando em um script muito leve.
 
 ---
 
+## 🛠️ Como Usar
 ## 🌍 Como Instalar (Deploy)
 
 Como a aplicação está publicada no NPM, você não precisa mais baixar os arquivos manualmente. Você pode instalar o Focus CLI globalmente no seu computador rodando apenas um comando:
 
 ```bash
 npm install -g focus-cli-felipe0762
-(Nota: Certifique-se de executar o seu terminal como Administrador no Windows, pois a aplicação precisa de permissões para alterar o arquivo hosts na hora de bloquear os sites).
-
-🛠️ Como Usar
+```
 Se você instalou globalmente via NPM, pode usar o programa de qualquer pasta do seu computador apenas digitando focus-cli.
 
 (Se estiver rodando o código localmente baixado do GitHub, substitua focus-cli por node focus.js e lembre-se de navegar até a pasta do projeto primeiro).
 
-Iniciar uma Sessão de Foco (Caminho Feliz)
-Bash
-focus-cli start 25
-Conecta-se à internet para buscar uma frase motivacional, inicia uma sessão de 25 minutos bloqueando os sites e mostrando uma contagem regressiva.
+> **⚠️ IMPORTANTE**: Como o sistema modifica a nível de rede o arquivo `hosts` do Windows (`C:\Windows\System32\drivers\etc\hosts`), você deve rodar o terminal (Command Prompt ou PowerShell) **como Administrador**.
 
-Comportamento Inválido
+### 1. Selecionar a Pasta do Projeto
+Antes de executar qualquer comando, você deve dizer ao terminal onde os arquivos do programa estão salvos usando o comando `cd` (Change Directory).
+
+No seu terminal como Administrador, navegue até a pasta do aplicativo colando o caminho correto. Exemplo:
+```bash
+cd C:\Users\teste\Área de trabalho\focus_cli
+```
+*(Certifique-se de usar o caminho real onde você baixou/clonou este repositório)*.
+
+### 2. Iniciar uma Sessão de Foco (Caminho Feliz - Happy Path)
+```bash
+node focus.js start 25
+```
+*Inicia uma sessão de 25 minutos bloqueando os sites e mostrando uma contagem regressiva. O fluxo normal e ideal é você completar a sessão.*
+
+### Comportamento Inválido
 Se você acidentalmente executar sem parâmetros ou tempo negativo:
+```bash
+node focus.js start abc
+# Retornará erro: "Please specify valid minutes"
+```
 
-Bash
-focus-cli start abc
-# Retornará erro: "[!] Please specify valid minutes."
-Cenário Limite (Edge Case)
+### Cenário Limite (Edge Case)
 Se você precisar parar o timer na metade de forma abrupta por uma emergência:
-Você aperta Ctrl + C. O programa detectará, registrará seus minutos concluídos apenas se houver minutos inteiros superados, e desbloqueará a sua rede perfeitamente antes de sair.
+Você aperta `Ctrl + C`. O programa detectará, registrará seus minutos concluídos apenas se houver minutos inteiros superados, e **desbloqueará** a sua rede perfeitamente antes de sair.
 
-Ver Relatório Semanal
-Bash
-focus-cli report
-Gerenciar Lista de Distrações
-Bash
-focus-cli list
-focus-cli block netflix.com
-focus-cli unblock facebook.com
-🧪 Testes Automatizados e CI/CD
-O projeto conta com Testes de Integração (validando a comunicação com a API externa) e testes de integridade, garantindo a qualidade do código. O repositório possui Integração Contínua (CI) via GitHub Actions.
+### Ver Relatório Semanal
+```bash
+node focus.js report
+```
 
-Para rodar os testes localmente:
+### Gerenciar Lista de Distrações
+```bash
+node focus.js list
+node focus.js block netflix.com
+node focus.js unblock facebook.com
+```
 
-Bash
-npm install
+### Testes Automatizados
+O projeto conta com testes de integridade que validam o Caminho Feliz, Tratamento de Entradas Inválidas e Casos Limite. Execute com:
+```bash
 npm test
-Consulte nossos arquivos CONTRIBUTING.md e CHANGELOG.md para saber mais.
+```
+
+---
+
+*Consulte nossos arquivos [`CONTRIBUTING.md`](CONTRIBUTING.md) e [`CHANGELOG.md`](CHANGELOG.md) para saber mais.*
