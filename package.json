@@ -1,5 +1,5 @@
 {
-  "name": "focus-cli-felipe0762", 
+  "name": "felipe-focus-timer",
   "version": "1.1.0",
   "description": "Uma CLI para bloquear distrações e manter o foco",
   "main": "focus.js",
@@ -7,7 +7,7 @@
     "focus-cli": "./focus.js"
   },
   "scripts": {
-    "test": "jest" 
+    "test": "jest"
   },
   "author": "Felipe",
   "license": "ISC"
